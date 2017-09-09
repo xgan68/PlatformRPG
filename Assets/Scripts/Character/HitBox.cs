@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+这段代码是实现塞尔达传说游戏里那种打击感的核心，
+简单的子弹时间效果，粒子特效，音效和击退效果结合
+能让游戏的战斗手感大幅度提升。
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +18,6 @@ public class HitBox : MonoBehaviour {
 	void Start () {
 		hitBoxCollider = GetComponent<BoxCollider> ();
 		hitBoxCollider.enabled = false;
-
 		hitEffect = transform.GetChild (0);
 	}
 
@@ -47,7 +51,6 @@ public class HitBox : MonoBehaviour {
 		while (remain > 0) {
 			yield return new WaitForSeconds (0.01f);
 			remain -= 0.01f;
-
 		}
 		Time.timeScale = 1f;
 	}
